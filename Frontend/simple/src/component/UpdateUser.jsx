@@ -20,7 +20,7 @@ const UpdateUser = () => {
      //First get data
      function getdata()
      {
-       axios.get(`http://localhost:5000/api/getone/`+id)
+       axios.get(`http://34.125.83.102:5000/api/getone/`+id)
        .then((res)=>{
          setInputdata(res.data)
        })
@@ -37,7 +37,7 @@ const UpdateUser = () => {
     function postdata(e)
     {
       e.preventDefault();
-      axios.put(`http://localhost:5000/api/update/`+id,inputdata)
+      axios.put(`http://34.125.83.102:5000/api/update/`+id,inputdata)
       .then((res)=>
       {
         toast.success("User Upddted Succefully",{position:"top-right"})
