@@ -11,7 +11,7 @@ const ReadUser = () => {
 
   const getuser = async () => {
     await axios
-      .get("http://localhost:5000/api/getall")
+      .get("http://34.125.83.102:5000/api/getall")
       .then((res) => {
         console.log(res);
         setUsers(res.data);
