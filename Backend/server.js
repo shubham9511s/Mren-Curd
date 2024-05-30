@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json())
 
 const PORT=5000;
-const URI=process.env.MONGO_URI;
+const URI=process.env.MONGO_URI || "mongodb+srv://shubhamssc100:EbFiDLczIbS0nJVe@project0.gystw8r.mongodb.net/project0";
 
 
 
