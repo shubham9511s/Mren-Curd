@@ -1,4 +1,3 @@
-require('dotenv').config({path:'./env'})
 const express = require('express')
 const mongoose = require("mongoose");
 const bodyparse = require("body-parser")
@@ -8,12 +7,12 @@ const route = require("./Routes/Routes.js")
 
 
 const app = express()
-app.use(bodyparse.json())
 app.use(cors());
+app.use(bodyparse.json())
 app.use(express.json())
 
-const PORT=5000;
-const URI=process.env.MONGO_URI || "mongodb+srv://shubhamssc100:EbFiDLczIbS0nJVe@project0.gystw8r.mongodb.net/project0";
+const PORT= 5000;
+const URI= "mongodb://13.60.166.116:27017/test";
 
 
 

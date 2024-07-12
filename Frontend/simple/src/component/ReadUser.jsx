@@ -11,7 +11,7 @@ const ReadUser = () => {
 
   const getuser = async () => {
     await axios
-      .get("http://34.125.56.157:5000/api/getall")
+      .get("http://localhost:5000/api/getall")
       .then((res) => {
         console.log(res);
         setUsers(res.data);
@@ -26,7 +26,7 @@ const ReadUser = () => {
   // Delete  User from the database
 
   const handledelete =async(id)=> {
-   await axios.delete( `http://34.125.56.157:5000/api/delete/${id}`)
+   await axios.delete( `http://localhost:5000/api/delete/${id}`)
     .then(()=>{
       toast.success("User Deleted Succefully",{position:"top-right"})
       getuser();

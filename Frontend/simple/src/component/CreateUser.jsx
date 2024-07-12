@@ -15,7 +15,7 @@ const CreateUser = () => {
   const handlesubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://34.125.56.157:5000/api/create",{name,email,password})
+      .post("http://localhost:5000/api/create",{name,email,password})
       .then((res) => {
         history('/')
         toast.success("User Created Succefully",{position:"top-right"})
