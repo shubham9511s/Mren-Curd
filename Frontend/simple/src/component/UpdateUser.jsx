@@ -20,7 +20,7 @@ const UpdateUser = () => {
      //First get data
      function getdata()
      {
-       axios.get(`http://13.51.241.63:5000/api/getone/`+id)
+       axios.get(`http://k8s-curd-mainlb-afee3d0a51-1422028004.eu-north-1.elb.amazonaws.com:5000/api/getone/`+id)
        .then((res)=>{
          setInputdata(res.data)
        })
@@ -37,7 +37,7 @@ const UpdateUser = () => {
     function postdata(e)
     {
       e.preventDefault();
-      axios.put(`http://13.51.241.63:5000/api/update/`+id,inputdata)
+      axios.put(`http://k8s-curd-mainlb-afee3d0a51-1422028004.eu-north-1.elb.amazonaws.com:5000/api/update/`+id,inputdata)
       .then((res)=>
       {
         toast.success("User Upddted Succefully",{position:"top-right"})

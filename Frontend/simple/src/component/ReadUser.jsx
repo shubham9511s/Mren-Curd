@@ -11,7 +11,7 @@ const ReadUser = () => {
 
   const getuser = async () => {
     await axios
-      .get("http://13.51.241.63:5000/api/getall")
+      .get("http://k8s-curd-mainlb-afee3d0a51-1422028004.eu-north-1.elb.amazonaws.com:5000/api/getall")
       .then((res) => {
         console.log(res);
         setUsers(res.data);
@@ -26,7 +26,7 @@ const ReadUser = () => {
   // Delete  User from the database
 
   const handledelete =async(id)=> {
-   await axios.delete( `http://13.51.241.63:5000/api/delete/${id}`)
+   await axios.delete( `http://k8s-curd-mainlb-afee3d0a51-1422028004.eu-north-1.elb.amazonaws.com:5000/api/delete/${id}`)
     .then(()=>{
       toast.success("User Deleted Succefully",{position:"top-right"})
       getuser();
