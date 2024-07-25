@@ -14,22 +14,19 @@ RUN npm install && npm audit fix
 COPY . .
 
 # Build the application
-#RUN npm run build
+RUN npm run build
 
-# Stage 2: Serve the application
-FROM node:18-alpine
+# Stage 2: Serve
+FROM nginx:1.23-alpine
 
-# Set the working directory inside the runner container
-WORKDIR /prodf
+# Copy the built assets from the build stage
+COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy the built application from the builder stage
-COPY --from=build /app /prodf
+# Copy a custom Nginx configuration file if needed
+# COPY nginx.conf /etc/nginx/nginx.conf
 
-# Install only production dependencies
-RUN npm install 
+# Expose the port on which the server will run (default port is 80 for Nginx)
+EXPOSE 80
 
-# Expose the port the app runs on
-EXPOSE 5173
-
-# Define the command to run the application
-CMD ["npm", "run","dev"]
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
