@@ -15,7 +15,7 @@ const CreateUser = () => {
   const handlesubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://k8s-curd-mainlb-afee3d0a51-1422028004.eu-north-1.elb.amazonaws.com:5000/api/create",{name,email,password})
+      .post("http://k8s-curd-mainlb-e9f042e71d-1350781151.ap-south-1.elb.amazonaws.com/api/create",{name,email,password})
       .then((res) => {
         history('/')
         toast.success("User Created Succefully",{position:"top-right"})
