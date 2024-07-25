@@ -12,7 +12,7 @@ app.use(bodyparse.json())
 app.use(express.json())
 
 const PORT= 5000;
-const URI= "mongodb://13.60.166.116:27017/test";
+const URI= "mongodb://admin:password@13.233.192.11:27017/todo?directConnection=true&appName=mongosh+2.2.12";
 
 
 
